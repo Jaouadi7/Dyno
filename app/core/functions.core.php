@@ -1,5 +1,8 @@
 <?php
 
+// PREVENT THE ACCESS FROM THE USER BROWSER
+defined('BASEPATH') OR exit('Access Denied!');
+
 // SHOW DATA FOR DEVELOPMENT
 function show_data ( $data ) {
 

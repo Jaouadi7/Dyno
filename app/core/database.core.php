@@ -1,5 +1,8 @@
 <?php
 
+// PREVENT THE ACCESS FROM THE USER BROWSER
+defined('BASEPATH') OR exit('Access Denied!');
+
 // DATABASE CLASS
 trait Database {
 
