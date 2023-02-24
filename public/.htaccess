@@ -1,0 +1,11 @@
+# The .htaccess file is a powerful website file that controls high-level configuration of your website. On servers that run Apache (a web server software), the .htaccess file allows you to make changes to your website’s configuration without having to edit server configuration files.
+
+# Enable RewriteEngine.
+RewriteEngine On
+
+# Accpet loading of exists files and direcories.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Not valid files or directories will redirect to index file with GET Request insert the not exist file name.
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,NC,L]

@@ -1,0 +1,5 @@
+# Blocks Robots and Search Engines from specific folders / directories
+
+User-agent: *
+Disallow: /admin/
+Disallow: /ajax/
