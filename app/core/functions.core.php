@@ -11,3 +11,11 @@ function show_data ( $data ) {
     echo '</pre>';
 
 }
+
+// REDIRECT TO HOMEPAGE
+function redirect ( ) {
+
+    header( 'Location: ', ROOT );
+    exit;
+
+}
