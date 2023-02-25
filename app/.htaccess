@@ -1,0 +1,3 @@
+# Directory access
+# This directive will prevent access to directories that don't have an index file
+Options -Indexes
