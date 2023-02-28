@@ -4,6 +4,7 @@
 defined('BASEPATH') OR exit('Access Denied!');
 
 // LOAD ALL CORE FILES
+require_once 'session.core.php';
 require_once 'config.core.php';
 require_once 'functions.core.php';
 require_once 'database.core.php';
