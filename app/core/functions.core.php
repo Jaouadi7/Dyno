@@ -19,3 +19,10 @@ function redirect ( ) {
     exit;
 
 }
+
+function redirect_to( $page_name = '' ) {
+
+    header( 'Location: '. ROOT . '/' . $page_name );
+    exit;
+
+}
