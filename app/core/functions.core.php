@@ -15,7 +15,7 @@ function show_data ( $data ) {
 // REDIRECT TO HOMEPAGE
 function redirect ( ) {
 
-    header( 'Location: ', ROOT );
+    header( 'Location: '. ROOT );
     exit;
 
 }
