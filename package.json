@@ -1,0 +1,35 @@
+{
+  "name": "mvc-framework",
+  "version": "0.1.0",
+  "description": "Dyno PHP MVC Framework to develop web projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaouadi7/dyno_php_mvc_framework.git"
+  },
+  "keywords": [
+    "PHP",
+    "MVC",
+    "Pattern",
+    "Framework",
+    "Backend",
+    "composer",
+    "Frontend",
+    "gulp",
+    "npm",
+    "javaScript",
+    "SCSS"
+  ],
+  "author": "Mohamed A. Eljaouadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jaouadi7/dyno_php_mvc_framework/issues"
+  },
+  "homepage": "https://github.com/Jaouadi7/dyno_php_mvc_framework#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
