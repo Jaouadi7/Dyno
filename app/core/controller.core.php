@@ -29,9 +29,9 @@ Class Controller {
     public function view_layout ( $path, $data = [ ] ) {
 
         // CHECK IF THE PATH OF THE VIEW IS EXISTS IN VIEWS FOLDER
-        if ( file_exists( '../app/views/layout/'  . THEME_TEMPLATE_DIR . strtolower($path) . '.layout.php' ) ) {
+        if ( file_exists( '../app/views/' . THEME_TEMPLATE_DIR .  'layout/' . strtolower($path) . '.layout.php' ) ) {
             
-            require_once  '../app/views/layout'  . THEME_TEMPLATE_DIR  . strtolower($path)  . '.layout.php';
+            require_once  '../app/views/' . THEME_TEMPLATE_DIR  . 'layout/' .  strtolower($path)  . '.layout.php';
 
         } else {
 
