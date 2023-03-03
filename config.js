@@ -6,7 +6,7 @@ export default {
     root: './public',
     src: {
       base: './public/front-end/src',
-      css: './public/front-end/src/scss',
+      scss: './public/front-end/src/scss',
       js: './public/front-end/src/js',
       img: './public/front-end/src/images',
       fonts: './public/front-end/src/fonts',
