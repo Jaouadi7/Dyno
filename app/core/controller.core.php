@@ -26,6 +26,22 @@ Class Controller {
 
     }
 
+    public function view_layout ( $path, $data = [ ] ) {
+
+        // CHECK IF THE PATH OF THE VIEW IS EXISTS IN VIEWS FOLDER
+        if ( file_exists( '../app/views/layout/'  . THEME_TEMPLATE_DIR . strtolower($path) . '.layout.php' ) ) {
+            
+            require_once  '../app/views/layout'  . THEME_TEMPLATE_DIR  . strtolower($path)  . '.layout.php';
+
+        } else {
+
+            // SHOW 404 ERROR MESSAGE
+            echo 'The ' . $path . 'file not found please check again!';
+
+        }
+        
+    }
+
     public function load_model ( $model ) {
 
 
