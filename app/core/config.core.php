@@ -28,6 +28,8 @@ else :
 endif;
 
 // DEFINE PATHS
+$https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
+$_SERVER['REQUEST_SCHEME'] = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : $https;
 $root = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . str_replace( 'index.php', '', $_SERVER['PHP_SELF'] );
 define( 'ROOT', $root);
 define( 'THEME_TEMPLATE_DIR', 'default-template/' );
