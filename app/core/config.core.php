@@ -33,10 +33,10 @@ $_SERVER['REQUEST_SCHEME'] = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUE
 $root = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . str_replace( 'index.php', '', $_SERVER['PHP_SELF'] );
 define( 'ROOT', $root);
 define( 'THEME_TEMPLATE_DIR', 'default-template/' );
-define( 'CSS_DIR_PATH', ROOT . 'front-end/css/' );
-define( 'JS_DIR_PATH', ROOT . 'front-end/js/' );
-define( 'IMAGES_DIR_PATH', ROOT . 'front-end/img/' );
-define( 'FONTS_DIR_PATH', ROOT . 'front-end/fonts/' );
+define( 'CSS_DIR_PATH', ROOT . 'front-end/dist/css/' );
+define( 'JS_DIR_PATH', ROOT . 'front-end/dist/js/' );
+define( 'IMAGES_DIR_PATH', ROOT . 'front-end/dist/img/' );
+define( 'FONTS_DIR_PATH', ROOT . 'front-end/dist/fonts/' );
 
 // APPLICATION INFORMATION
 define('APPLICATION_NAME', 'PHP MVC CUSTOM FRAMEWORK');
