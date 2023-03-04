@@ -78,6 +78,17 @@ const buildCSS = (done) => {
   done();
 };
 
+//---------------------------------------
+//         SETUP JS TASK            ---
+//---------------------------------------
+
+const buildJS = (done) => {
+  src(`${development.js}/script.js`)
+    .pipe(dest(`${production.js}/`))
+    .pipe(browserSync.reload({ stream: true }));
+  done();
+};
+
 //---------------------------------------------
 //   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
 //---------------------------------------------
@@ -85,6 +96,7 @@ const buildCSS = (done) => {
 const dev = () => {
   watch('*/**/*.*.php').on('change', () => browserSync.reload());
   watch(`${development.scss}/core.scss`, series(buildCSS, reload));
+  watch(`${development}js/**/*.js`, series(buildJS, reload));
 };
 
 //------------------------------------
@@ -92,5 +104,6 @@ const dev = () => {
 //------------------------------------
 
 task('css', buildCSS);
+task('js', buildJS);
 task('watch', parallel(start_server, dev));
 export default parallel(start_server, dev);
