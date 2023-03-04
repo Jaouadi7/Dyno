@@ -20,6 +20,8 @@ import autoPrefixer from 'gulp-autoprefixer';
 import sourceMaps from 'gulp-sourcemaps';
 const { init, write } = sourceMaps;
 
+import optimizeImages from 'gulp-image';
+
 //-----------------------------------
 //        SET FRONTEN ROUTES      ---
 //-----------------------------------
@@ -89,6 +91,17 @@ const buildJS = (done) => {
   done();
 };
 
+//---------------------------------------
+//         SETUP IMAGES TASK          ---
+//---------------------------------------
+
+const compressImages = (done) => {
+  src(`${development.img}/*`)
+    .pipe(optimizeImages())
+    .pipe(dest(`${production.img}/`));
+  done();
+};
+
 //---------------------------------------------
 //   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
 //---------------------------------------------
@@ -96,7 +109,8 @@ const buildJS = (done) => {
 const dev = () => {
   watch('*/**/*.*.php').on('change', () => browserSync.reload());
   watch(`${development.scss}/core.scss`, series(buildCSS, reload));
-  watch(`${development}js/**/*.js`, series(buildJS, reload));
+  watch(`${development.js}/**/*.js`, series(buildJS, reload));
+  watch(`${development.img}/**/*`, series(optimizeImages, reload));
 };
 
 //------------------------------------
@@ -105,5 +119,6 @@ const dev = () => {
 
 task('css', buildCSS);
 task('js', buildJS);
+task('images', compressImages);
 task('watch', parallel(start_server, dev));
 export default parallel(start_server, dev);
