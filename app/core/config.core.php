@@ -27,10 +27,18 @@ else :
 
 endif;
 
-// DEFINE PATHS
+
+// DO SOME CHECK FOR THE URL
+
+// $_SERVER['REQUEST_SCHEME'] IF KEY UNDIFINED
 $https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
 $_SERVER['REQUEST_SCHEME'] = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : $https;
-$root = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . str_replace( 'index.php', '', $_SERVER['PHP_SELF'] );
+
+// CHECK IF SERVER PORT IS EXISTS
+$port =  isset( $_SERVER['SERVER_PORT'] ) ? ':' . $_SERVER['SERVER_PORT'] : '';
+
+// DEFINE PATHS
+$root = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $port . str_replace( 'index.php', '', $_SERVER['PHP_SELF'] );
 define( 'ROOT', $root);
 define( 'THEME_TEMPLATE_DIR', 'default-template/' );
 define( 'CSS_DIR_PATH', ROOT . 'front-end/dist/css/' );
