@@ -102,6 +102,17 @@ const compressImages = (done) => {
   done();
 };
 
+//---------------------------------------
+//          SETUP FONTS TASK          ---
+//---------------------------------------
+
+const fonts = (done) => {
+  src(`${development.fonts}/**/*`)
+    .pipe(dest(production.fonts))
+    .pipe(browserSync.reload({ stream: true }));
+  done();
+};
+
 //---------------------------------------------
 //   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
 //---------------------------------------------
@@ -111,6 +122,7 @@ const dev = () => {
   watch(`${development.scss}/core.scss`, series(buildCSS, reload));
   watch(`${development.js}/**/*.js`, series(buildJS, reload));
   watch(`${development.img}/**/*`, series(optimizeImages, reload));
+  watch(`${development.fonts}/**/*`, series(fonts, reload));
 };
 
 //------------------------------------
@@ -120,5 +132,6 @@ const dev = () => {
 task('css', buildCSS);
 task('js', buildJS);
 task('images', compressImages);
+task('fonts', fonts);
 task('watch', parallel(start_server, dev));
 export default parallel(start_server, dev);
