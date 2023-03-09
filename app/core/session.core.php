@@ -39,6 +39,25 @@ class Session {
 
 	}
 
+      // SET AND CREATE SPECIFIC DATA TO SESSION
+      public function set ( $data = [ ] ) {
+
+
+        // CHECK DATA IS FOUND AND TYPE IS ARRAY
+        if ( ! empty( $data ) && is_array( $data) ):
+
+            // LOOP DATA KEY AND VALUE
+            foreach ( $data as $key => $value ):
+               
+                // STORE DATA IN SESSION
+                $_SESSION[$this->mainkey][$this->secondrykey][$key] = $value;
+                
+            endforeach;
+           
+        endif;
+
+    }
+
 }
 
 // CHECK & INIT A NEW SESSION ONCE THE APPLICATION RUN
