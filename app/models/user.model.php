@@ -1,5 +1,8 @@
 <?php
 
+// NAMESPACE
+namespace Model;
+
 // PREVENT THE ACCESS FROM THE USER BROWSER
 defined('BASEPATH') OR exit('Access Denied!');
 
