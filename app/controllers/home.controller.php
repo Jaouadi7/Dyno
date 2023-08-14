@@ -1,16 +1,17 @@
 <?php
 
-// NAMESPACE
 namespace Controller;
 
 // PREVENT THE ACCESS FROM THE USER BROWSER
 defined('BASEPATH') OR exit('Access Denied!');
 
-class Home extends Controller {
+class Home {
+
+    use \Core\Controller;
 
     public function __construct ( ) {
 
-    } 
+    }
 
     public function index ( ) {
 

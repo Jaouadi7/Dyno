@@ -7,4 +7,4 @@ define( 'BASEPATH', __DIR__ . DIRECTORY_SEPARATOR );
 require_once '../app/core/init.php';
 
 // INIT THE APPLICATION
-$app = new Application();
+$app = new \Core\Application();

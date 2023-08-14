@@ -6,7 +6,8 @@ namespace Core;
 // PREVENT THE ACCESS FROM THE USER BROWSER
 defined('BASEPATH') OR exit('Access Denied!');
 
-Class Controller {
+trait Controller {
+
 
     public function __construct ( ) {
 

@@ -38,13 +38,14 @@ Class Application  {
         }
 
         require_once '../app/controllers/' . $this->controller . '.controller.php';
-        $this->controller = new $this->controller;
+        $load_controller =  'Controller\\' . ucfirst( $this->controller );
+        $this->controller = new $load_controller;
 
         // CHECK URL METHOD
         if ( isset( $url[1] ) ) {
 
             // CHECK URL METHOD FUNCTION IF SET IN CONTROLLER CLASS
-            if ( method_exists( $this->controller, strtolower( $url[1] ) )) {
+            if ( method_exists(  $this->controller, strtolower( $url[1] ) )) {
  
                 $this->method = strtolower( $url[1] );
                 unset( $url[1] );
